@@ -1,0 +1,61 @@
+/* Fonte */
+@import url("https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap");
+
+/* Tailwind*/
+@import "tailwindcss";
+@theme {
+  /* Fontes */
+  --font-sofia: Sofia Sans, sans-serif;
+  /* Paleta de cores */
+  --color-primary: #3f455d;
+  --color-secundary: #363b4f;
+}
+/* Componentes */
+@layer components {
+  select option {
+    @apply bg-primary text-white;
+  }
+}
+@layer base {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+/* Sombreamentos */
+.text-shadow {
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Remover borda dos input selecionados */
+.no-border-focus {
+  @apply border border-gray-300 rounded focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30;
+}
+
+html {
+  @apply font-sofia;
+}
+
+/* Classes */
+.result-card {
+  @apply bg-primary text-white flex flex-col items-center justify-center rounded-[10px] w-[80%] lg:w-[70%] h-[5.938rem] lg:h-[8rem];
+}
+
+.card-title {
+  @apply text-[0.875rem]  lg:text-[1.2rem];
+}
+
+.result-valor {
+  @apply text-[1.5rem] lg:text-[1.8rem] underline;
+}
+
+.card-subtitle {
+  @apply text-[0.875rem];
+}
+
+/* Estilos do desktop */

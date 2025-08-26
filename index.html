@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="html, css, tailwind, js" />
+    <meta name="description" content="Calculadora de média acadêmica" />
+    <meta name="author" content="Anderson G. S. Farias" />
+    <meta property="og:title" content="GPA Calculator" />
+    <meta property="og:description" content="Calculadora de média acadêmica" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora Acadêmica</title>
+    <link href="/src/style.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <!-- Titulo da pagina -->
+      <div class="flex justify-center text-center h-[]">
+        <h1 class="text-primary text-[2.5rem] w-[13.125rem] lg:w-[100%] leading-tight mt-[3.25rem] mb-[7rem] text-shadow" lang="pt-BR" role="heading" aria-level="1">Calculadora Acadêmica</h1>
+      </div>
+    </header>
+    <main class="lg:min-h-[72vh] lg:flex lg:flex-row lg:items-start lg:justify-center lg:gap-20 flex flex-col items-center">
+      <!-- Box de inclusão das diciplinas -->
+      <!-- Titulo das diciplinas -->
+      <div id="discipline-container" class="w-[90%] max-w-2xl border-primary border-3 rounded-[30px] mb-[3.125rem] lg:ml-[1.75]">
+        <div id="discipline-title" class="flex items-center pt-[0.7rem] pb-[0.5rem]">
+          <i class="ri-book-3-line text-[2rem] text-primary pl-[1.563rem] pr-[1rem]"></i>
+          <h1 class="text-[1.563rem] text-primary font-semi">Diciplinas</h1>
+        </div>
+        <!-- Caixa da diciplina e nota -->
+        <div id="discipline-box" class="bg-primary w-[95%] lg:w-[80%] rounded-[10px] mx-auto mt-[1.25rem] mb-[1.25rem] flex flex-row">
+          <!-- Selecao de disciplina -->
+          <div id="discipline-option" class="flex items-center h-[4rem] rounded-[10px]">
+            <span class="text-white pl-[0.6rem] pr-[0.5rem] text-[1.3rem]">1.</span>
+            <li class="list-none">
+              <ul>
+                <select id="discipline-options" class="text-white text-[1.3rem] border-none no-border-focus hover:cursor-pointer" aria-label="Seleção de disciplina" required>
+                  <option class="bg-primary" value="Matemática">Matemática</option>
+                  <option value="Português">Português</option>
+                  <option value="Inglês">Inglês</option>
+                  <option value="História">História</option>
+                  <option value="Geografia">Geografia</option>
+                  <option value="Física">Física</option>
+                  <option value="Química">Química</option>
+                  <option value="Biologia">Biologia</option>
+                  <option value="Filosofia">Filosofia</option>
+                  <option value="Sociologia">Sociologia</option>
+                  <option value="Artes">Artes</option>
+                  <option value="Educação Física">Educação Física</option>
+                  <option value="Informática">Informática</option>
+                </select>
+              </ul>
+            </li>
+          </div>
+          <!-- Nota da disciplina -->
+          <div class="flex items-center justify-evenly sm:justify-end lg:justify-end w-full sm:gap-5 lg:gap-5">
+            <input
+              type="number"
+              placeholder="Nota"
+              class="text-primary placeholder-primary w-[3.2rem] bg-white rounded-[5px] text-center h-[2rem] align-middle text-[1.1rem] justify-center focus:placeholder-transparent no-border-focus"
+              type="number"
+              placeholder="Nota"
+              class="text-primary placeholder-primary w-[3.2rem] bg-white rounded-[5px] text-center h-[2rem] align-middle text-[1.1rem] justify-center focus:placeholder-transparent no-border-focus"
+              min="0"
+              max="10"
+              step="0.1"
+              aria-label="Nota da disciplina"
+              title="Digite a nota da disciplina entre 0 e 10"
+            />
+            <!-- Botao de deletar -->
+            <button class="bg-white w-[1.4rem] h-[1rem] rounded-[5px] pb-[25px] sm:mr-[1.5rem] lg:mr-[1.5rem] hover:cursor-pointer lg:duration-300 ease-in-out lg:hover:transform-[scale(1.2)];"><i class="ri-delete-bin-line text-[1rem] text-primary"></i></button>
+          </div>
+        </div>
+        <!-- Botao de adicionar disciplina -->
+        <div class="flex flex-col align-middle justify-center">
+          <button id="add-discipline" class="bg-primary text-white w-[2rem] h-[2rem] rounded-[10px] mx-auto align-middle mb-[3.563rem] hover:cursor-pointer lg:duration-300 ease-in-out lg:hover:transform-[scale(1.2)];"><i class="ri-add-line text-[1rem]"></i></button>
+          <!-- Botao de calcular disciplina -->
+          <button id="calculate" class="mx-auto bg-primary text-white w-[7rem] h-[3rem] rounded-[10px] mb-[1.5rem] text-[1.2rem] hover:cursor-pointer lg:duration-300 ease-in-out lg:hover:transform-[scale(1.2)];">Calcular</button>
+        </div>
+      </div>
+      <!-- Box de resultados -->
+      <div id="result-container" class="w-[90%] max-w-2xl border-primary border-3 rounded-[30px] lg:mr-[1.75]">
+        <div id="result-title" class="flex items-center pt-[0.7rem] pb-[0.5rem]">
+          <i class="ri-calculator-line text-[2rem] text-primary pl-[1.563rem] pr-[1rem]"></i>
+          <h2 class="text-[1.563rem] text-primary font-semi">Seus resultados</h2>
+        </div>
+        <!-- Resultado da media -->
+        <div id="first-result-box" class="w-full flex justify-center">
+          <div class="flex justify-center items-center bg-primary text-white w-[8rem] h-[3rem] text-[1.5rem] rounded-[10px]">
+            <p>Média: <span id="average">0</span></p>
+          </div>
+        </div>
+        <!-- Cards dos resultados -->
+        <div>
+          <section class="grid grid-rows-2 grid-cols-2 gap-y-[1rem] items-center place-items-center-safe mt-[1rem] mb-[2.188rem]">
+            <div class="result-card">
+              <h3 class="card-title">Maior nota:</h3>
+              <p id="higher-note" class="result-valor" aria-live="polite">0</p>
+              <p id="hn-discipline-name" class="card-subtitle">—</p>
+            </div>
+            <div class="result-card">
+              <h3 class="card-title">Menor nota:</h3>
+              <p id="lowest-note" class="result-valor" aria-live="polite">0</p>
+              <p id="ln-discipline-name" class="card-subtitle">—</p>
+            </div>
+            <div class="result-card">
+              <h3 class="card-title">Porcentagem</h3>
+              <p id="percent" class="result-valor" aria-live="polite"><span id="percent-valor">0</span>%</p>
+            </div>
+            <div class="result-card">
+              <h3 class="card-title">Total de diciplina</h3>
+              <p id="total-discipline" class="result-valor" aria-live="polite">0</p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer class="flex items-center justify-center bg-primary text-white h-[3.125rem] mt-[5rem] lg:mt-[0]">
+      <h4 class="text-[0.875rem]">© Design e Desenvolvimento por <a target="_blank" href="https://andersongsfarias.github.io/Portfolio/" class="underline italic">Anderson Farias</a></h4>
+    </footer>
+  </body>
+</html>
