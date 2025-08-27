@@ -32,10 +32,10 @@
           <h1 class="text-[1.563rem] text-primary font-semi">Diciplinas</h1>
         </div>
         <!-- Caixa da diciplina e nota -->
-        <div id="discipline-box" class="bg-primary w-[95%] lg:w-[80%] rounded-[10px] mx-auto mt-[1.25rem] mb-[1.25rem] flex flex-row">
+        <div class="discipline-box show-first bg-primary w-[95%] lg:w-[80%] rounded-[10px] mx-auto mt-[1.25rem] mb-[1.25rem] flex flex-row">
           <!-- Selecao de disciplina -->
           <div id="discipline-option" class="flex items-center h-[4rem] rounded-[10px]">
-            <span class="text-white pl-[0.6rem] pr-[0.5rem] text-[1.3rem]">1.</span>
+            <span class="discipline-count text-white pl-[0.6rem] pr-[0.5rem] text-[1.3rem]">1.</span>
             <li class="list-none">
               <ul>
                 <select id="discipline-options" class="text-white text-[1.3rem] border-none no-border-focus hover:cursor-pointer" aria-label="Seleção de disciplina" required>
@@ -72,14 +72,14 @@
               title="Digite a nota da disciplina entre 0 e 10"
             />
             <!-- Botao de deletar -->
-            <button class="bg-white w-[1.4rem] h-[1rem] rounded-[5px] pb-[25px] sm:mr-[1.5rem] lg:mr-[1.5rem] hover:cursor-pointer lg:duration-300 ease-in-out lg:hover:transform-[scale(1.2)];"><i class="ri-delete-bin-line text-[1rem] text-primary"></i></button>
+            <button class="delete-btn bg-white w-[1.4rem] h-[1rem] rounded-[5px] pb-[25px] sm:mr-[1.5rem] lg:mr-[1.5rem] hover:cursor-pointer lg:duration-300 lg:ease-in-out lg:hover:transform-[scale(1.2)] active:transform-[scale(1.2)]"><i class="ri-delete-bin-line text-[1rem] text-primary"></i></button>
           </div>
         </div>
         <!-- Botao de adicionar disciplina -->
         <div class="flex flex-col align-middle justify-center">
-          <button id="add-discipline" class="bg-primary text-white w-[2rem] h-[2rem] rounded-[10px] mx-auto align-middle mb-[3.563rem] hover:cursor-pointer lg:duration-300 ease-in-out lg:hover:transform-[scale(1.2)];"><i class="ri-add-line text-[1rem]"></i></button>
+          <button id="add-discipline" class="bg-primary text-white w-[2rem] h-[2rem] rounded-[10px] mx-auto align-middle mb-[3.563rem] hover:cursor-pointer duration-300 ease-in-out lg:hover:transform-[scale(1.2)] active:transform-[scale(1.2)]"><i class="ri-add-line text-[1rem]"></i></button>
           <!-- Botao de calcular disciplina -->
-          <button id="calculate" class="mx-auto bg-primary text-white w-[7rem] h-[3rem] rounded-[10px] mb-[1.5rem] text-[1.2rem] hover:cursor-pointer lg:duration-300 ease-in-out lg:hover:transform-[scale(1.2)];">Calcular</button>
+          <button id="calculate" class="mx-auto bg-primary text-white w-[7rem] h-[3rem] rounded-[10px] mb-[1.5rem] text-[1.2rem] hover:cursor-pointer duration-300 ease-in-out lg:hover:transform-[scale(1.2)] active:transform-[scale(1.2)]">Calcular</button>
         </div>
       </div>
       <!-- Box de resultados -->
@@ -122,5 +122,6 @@
     <footer class="flex items-center justify-center bg-primary text-white h-[3.125rem] mt-[5rem] lg:mt-[0]">
       <h4 class="text-[0.875rem]">© Design e Desenvolvimento por <a target="_blank" href="https://andersongsfarias.github.io/Portfolio/" class="underline italic">Anderson Farias</a></h4>
     </footer>
+    <script src="src/main.js"></script>
   </body>
 </html>
