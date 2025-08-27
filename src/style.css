@@ -3,6 +3,7 @@
 
 /* Tailwind*/
 @import "tailwindcss";
+
 @theme {
   /* Fontes */
   --font-sofia: Sofia Sans, sans-serif;
@@ -55,7 +56,7 @@ html {
 }
 
 .card-subtitle {
-  @apply text-[0.875rem];
+  @apply text-[0.875rem]  lg:text-[1.2rem];
 }
 
 /* Estilos do desktop */
